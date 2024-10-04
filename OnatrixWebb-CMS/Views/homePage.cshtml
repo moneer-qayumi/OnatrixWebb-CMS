@@ -1,0 +1,154 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+
+	var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "default-image-url";
+	var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "default-signature-url";
+	var trustedBackgroundImage = Model?.Value<IPublishedContent>("trustedBackgroundImage")?.Url() ?? "default-signature-url";
+    var succesStorieBackground = Model?.Value<IPublishedContent>("succesStorieBackground")?.Url() ?? "default-signature-url";
+
+    var ourProjectsFirstImage = Model?.Value<IPublishedContent>("ourProjectsFirstImage")?.Url() ?? "default-signature-url";
+    var ourProjectsSecondImage = Model?.Value<IPublishedContent>("ourProjectsSecondImage")?.Url() ?? "default-signature-url";
+    var ourProjectsThirdImage = Model?.Value<IPublishedContent>("ourProjectsThirdImage")?.Url() ?? "default-signature-url";
+    var ourProjectsFouthImage = Model?.Value<IPublishedContent>("ourProjectsFouthImage")?.Url() ?? "default-signature-url";
+}
+
+<!----hero section --->
+<section class="hero bg-gray">
+    <div class="container">
+        <div class="img-container">
+            <!-- Safe use of backgroundImage -->
+            <img src="@backgroundImage" alt="woman">
+        </div>
+        <div class="hero-content">
+            <h1 class="headline">@Model?.Value("heroHeadline")</h1>
+            <p class="ingress">@Model?.Value("heroText")</p>
+            <div class="btn-container">
+                <a class="btn btn-primary" href="/contact-us/">@Model?.Value("heroButtonText")</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!----about-us--->
+<section class="about-us">
+    <div class="container">
+        <div class="about-us-content">
+            <h6>@Model?.Value("aboutSectionTitle")</h6>
+            <h2>@Model?.Value("aboutHeadline")</h2>
+            <p class="about-us-quote">@Model?.Value("aboutQuote")</p>
+            <p class="about-us-text">@Model?.Value("aboutText")</p>
+            <img src="@signatureImage" alt="@Model?.Value("aboutSignature")">
+            <p class="ceo-founder">@Model?.Value("aboutSignature")</p>
+        </div>
+        <div class="call-back">
+            <div class="call-back-header bg-primary">
+                <h3>Request a call back</h3>
+            </div>
+                <div class="call-back-content">
+                    <p>
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
+                    </p>
+                    <form method="get" novalidate>
+                        <input type="text" id="name" name="name" placeholder="Name">
+                        <input type="email" id="email" name="email" placeholder="Email address">
+                        <input type="text" id="phone" name="phone" placeholder="Phone">
+                        <select name="service" id="service">
+                            <option value="1">Financial consulting</option>
+                        </select>
+                        <button class="btn btn-secondary" type="submit">Submit</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</section>
+
+<!----our-services--->
+@await Html.PartialAsync("static/services")
+
+<!----our-story--->
+<section class="our-story">
+    <div class="container">
+        <div class="our-story-content">
+            <h2>@Model?.Value("trustedSectionHeadline") <span>@Model?.Value("trustedSectionHeadline2")</span></h2>
+            <p>@Model.Value("trustedButtonText")</p>
+            <a class="btn btn-primary" href="#">@Model.Value("trustedButtonUrl")</a>
+        </div>
+        <div class="our-story-img">
+            <img src="@trustedBackgroundImage" alt="People">
+        </div>
+    </div>
+</section>
+
+<!----success-story--->
+<section class="success-stories bg-primary">
+    <div class="container">
+        <div class="success-stories-content">
+            <h6>@Model.Value("successStoriesHeadline")</h6>
+            <h2>@Model.Value("succesStorieTitle")</h2>
+            <div class="grid">
+                <div class="grid-container">
+                    <p><span>689</span>More than 100 customers has been served</p>
+                </div>
+                <div class="grid-container">
+                    <p><span>370</span>More than 370 projects has been completed</p>
+                </div>
+                <div class="grid-container">
+                    <p><span>125</span>More than 125 branches has been established in Europe and America</p>
+                </div>
+            </div>
+        </div>
+        <div class="success-stories-img">
+            <img src="@succesStorieBackground" alt="People at table">
+        </div>
+    </div>
+</section>
+
+<!----our-project--->
+<section class="our-projects">
+    <div class="container">
+        <h6>OUR PROJECTS</h6>
+        <h2>Recent projects</h2>
+    </div>
+    <div class="grid">
+        <a class="grid-container" href="/our-projects/annual-report/">
+            <img src="@ourProjectsFirstImage" alt="Annual report">
+            <div class="project-content bg-primary">
+                <h6>Annual Report for Juva Inc.</h6>
+                <p>Financial services</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </a>
+        <a class="grid-container" href="/our-projects/annual-report/">
+            <img src="@ourProjectsSecondImage" alt="Annual report">
+            <div class="project-content bg-primary">
+                <h6>Business Insights for SP Group Inc.</h6>
+                <p>Financial services</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </a>
+        <a class="grid-container" href="/our-projects/annual-report/">
+            <img src="@ourProjectsThirdImage" alt="Annual report">
+            <div class="project-content bg-primary">
+                <h6>Financial Advisors to Irra Corp Inc.</h6>
+                <p>Financial services</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </a>
+        <a class="grid-container" href="/our-projects/annual-report/">
+            <img src="@ourProjectsFouthImage" alt="Annual report">
+            <div class="project-content bg-primary">
+                <h6>Budget Planning for Buccura Inc.</h6>
+                <p>Financial services</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!----partners-logo--->
+@await Html.PartialAsync("static/partners")

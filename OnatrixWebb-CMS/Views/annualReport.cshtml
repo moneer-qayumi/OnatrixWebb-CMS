@@ -1,0 +1,132 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var annualReportImage = Model?.Value<IPublishedContent>("annualReportImage")?.Url() ?? "default-image-url";
+    var annualReportImage2 = Model?.Value<IPublishedContent>("annualReportImage2")?.Url() ?? "default-image-url";
+    var annualReportImage3 = Model?.Value<IPublishedContent>("annualReportImage3")?.Url() ?? "default-image-url";
+
+    var annualReportSideImage1 = Model?.Value<IPublishedContent>("annualReportSideImage1")?.Url() ?? "default-image-url";
+    var annualReportSideImage2 = Model?.Value<IPublishedContent>("annualReportSideImage2")?.Url() ?? "default-image-url";
+    var annualReportSideImage3 = Model?.Value<IPublishedContent>("annualReportSideImage3")?.Url() ?? "default-image-url";
+    var annualReportSideImage4 = Model?.Value<IPublishedContent>("annualReportSideImage4")?.Url() ?? "default-image-url";
+}
+
+<section class="page-top bg-gray">
+    <h1>Annual Report for Juva Inc.</h1>
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="/our-projects">Projects</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a class="active" href="#">Annual Report for Juva Inc.</a>
+    </div>
+</section>
+
+<!----article section --->
+<section class="article">
+    <div class="container">
+        <div class="article-container">
+            <div class="date">
+                <i class="fa-regular fa-calendar-days"></i>
+                <p>June 15, 2024</p>
+            </div>
+            <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at enim vestibulum, dapibus elit quis, pellentesque justo. Proin sit amet libero quis orci convallis mollis.</p>
+            <img src="@annualReportImage" alt="Annual report">
+            <h5>Suggestions for you</h5>
+            <ul>
+                <li>Financial planning is the process of helping clients meet their financial needs today and reach their dreams and goals tomorrow.</li>
+                <li>Pellentesque fringilla augue quis dolor dapibus semper eget non nibh. Ut lobortis, nulla sed euismod posuere, quam magna scelerisque lectus, auctor iaculis quam ligula nec augue</li>
+                <li>In hac habitasse platea dictumst. Aliquam felis ante, tincidunt sed magna auctor, aliquet dapibus turpis.</li>
+            </ul>
+            <div class="img-and-text">
+                <img src="@annualReportImage2" alt="Woman sitting">
+                <div class="text">
+                    <h5>Nunc facilisis ante quis gravida mollis</h5>
+                <p>Ut porttitor tempus augue, quis luctus erat dapibus ac. Curabitur eu placerat purus.</p>
+                <p>Vestibulum tempor velit diam, ac ultrices turpis posuere vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse semper nec libero vitae elementum</p>
+                </div>
+            </div>
+            <h5>Nullam at blandit felis, ut efficitur lorem. Nulla pharetra turpis eget dictum condimentum</h5>
+            <p>Cras posuere tristique urna sodales laoreet. Phasellus nibh nunc, porttitor vitae elementum eget, condimentum lobortis metus. Aenean imperdiet suscipit dui</p>
+            <p>Integer quis massa sit amet diam feugiat molestie. Morbi egestas arcu eu sapien accumsan, et tempor velit viverra. Ut varius euismod malesuada. Vestibulum consectetur justo turpis. Vivamus varius purus consequat urna maximus molestie. Sed facilisis maximus quam id pretium. Donec ac orci vel quam semper tristique. Maecenas facilisis, urna sed congue pellentesque, justo augue semper nulla</p>
+            <p>Phasellus vehicula, nulla id condimentum luctus, enim tortor semper dolor, non gravida ex nulla in lacus. Nulla ex ante, euismod sit amet quam sit amet, hendrerit maximus metus. Proin et est nec sem ultricies congue ac pretium sapien. Vestibulum varius vestibulum egestas. Nam tempor in enim quis congue.</p>
+            <img class="img-margin-top" src="@annualReportImage3" alt="Two people">
+            <h5>Nunc facilisis ante quis gravida mollis</h5>
+            <p>Ut porttitor tempus augue, quis luctus erat dapibus ac. Curabitur eu placerat purus. Vestibulum tempor velit diam, ac ultrices turpis posuere vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse semper nec libero vitae elementum</p>
+            <p>Phasellus vehicula, nulla id condimentum luctus, enim tortor semper dolor, non gravida ex nulla in lacus. Nulla ex ante, euismod sit amet quam sit amet, hendrerit maximus metus. Proin et est nec sem ultricies congue ac pretium sapien. Vestibulum varius vestibulum egestas. Nam tempor in enim quis congue.</p>
+            <div class="article-tags">
+                <p>Tags:</p>
+                <a class="btn btn-secondary" href="#">Business</a>
+                <a class="btn btn-secondary" href="#">Consulting</a>
+                <a class="btn btn-secondary" href="#">Onatrix</a>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <h5>Recent projects</h5>
+            <div class="recent-projects-list">
+                <a class="recent-project-container" href="/our-services/risk-management/">
+                    <img src="@annualReportSideImage1" alt="Annual report">
+                    <div class="recent-project-content">
+                        <p class="recent-project-title">Annual Report for Juva Inc.</p>
+                        <div class="date">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <p>June 15, 2024</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="recent-project-container" href="/our-services/risk-management/">
+                    <img src="@annualReportSideImage2" alt="Annual report">
+                    <div class="recent-project-content">
+                        <p class="recent-project-title">Business Insights for SP Group Inc.</p>
+                        <div class="date">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <p>May 17, 2024</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="recent-project-container" href="/our-projects/annual-report/">
+                    <img src="@annualReportSideImage3" alt="Annual report">
+                    <div class="recent-project-content">
+                        <p class="recent-project-title">Financial Advisors to Irra Group Inc.</p>
+                        <div class="date">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <p>February 6, 2024</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="recent-project-container" href="/our-projects/annual-report/">
+                    <img src="@annualReportSideImage4" alt="Annual report">
+                    <div class="recent-project-content">
+                        <p class="recent-project-title">Budget Planning for Buccura Inc.</p>
+                        <div class="date">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <p>January 3, 2024</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <h5>Tags</h5>
+            <button class="btn tag-btn">Report</button>
+            <button class="btn tag-btn">Business plans</button>
+            <button class="btn tag-btn">Insights</button>
+            <button class="btn tag-btn">Business</button>
+            <button class="btn tag-btn">App</button>
+            <button class="btn tag-btn">Project</button>
+            <button class="btn tag-btn">Finance</button>
+            <button class="btn tag-btn">Pricing</button>
+            <form class="support-box bg-primary" method="get" novalidate>
+                <h5>How can we help you?</h5>
+                <p class="support-text">online support 24/7, we are here to help you</p>
+                <div class="input-container">
+                    <input type="email" id="email" name="email" placeholder="E-mail address">
+                    <button class="btn"><i class="fa-regular fa-envelope"></i></button>
+                </div>
+            </form>
+        </aside>
+    </div>
+</section>
+
+<!----contactinfo --->
+@await Html.PartialAsync("static/contactinfo")

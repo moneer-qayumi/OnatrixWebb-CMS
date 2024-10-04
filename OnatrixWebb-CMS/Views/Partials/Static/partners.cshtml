@@ -1,0 +1,28 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPublishedContent>
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents.FirstOrDefault(x => x.ContentType.Alias == "settingsPage");
+
+    // Correct the use of .Url() method
+    var partnersLogo1 = settings?.Value<IPublishedContent>("partnersLogo1")?.Url() ?? "default-signature-url";
+    var partnersLogo2 = settings?.Value<IPublishedContent>("partnersLogo2")?.Url() ?? "default-signature-url";
+    var partnersLogo3 = settings?.Value<IPublishedContent>("partnersLogo3")?.Url() ?? "default-signature-url";
+    var partnersLogo4 = settings?.Value<IPublishedContent>("partnersLogo4")?.Url() ?? "default-signature-url";
+    var partnersLogo5 = settings?.Value<IPublishedContent>("partnersLogo5")?.Url() ?? "default-signature-url";
+    var partnersLogo6 = settings?.Value<IPublishedContent>("partnersLogo6")?.Url() ?? "default-signature-url";
+}
+
+<!-- Partners Logo Section -->
+<section class="logos">
+    <div class="container">
+        <img src="@partnersLogo1" alt="Logo 1">
+        <img src="@partnersLogo2" alt="Logo 2">
+        <img src="@partnersLogo3" alt="Logo 3">
+        <img src="@partnersLogo4" alt="Logo 4">
+        <img src="@partnersLogo5" alt="Logo 5">
+        <img src="@partnersLogo6" alt="Logo 6">
+    </div>
+</section>

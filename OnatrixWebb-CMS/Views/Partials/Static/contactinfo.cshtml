@@ -1,0 +1,42 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPublishedContent>
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents.FirstOrDefault(x => x.ContentType.Alias == "settingsPage");
+
+    // Correct the use of .Url() method
+    var helpDeskImage = settings?.Value<IPublishedContent>("helpDeskImage")?.Url() ?? "default-signature-url";
+
+}
+
+ <section class="contact-info bg-gray">
+    <div class="container">
+        <img src="@helpDeskImage" alt="Beard dude">
+        <div class="contact-info-content">
+            <h2>Let us know about your next project</h2>
+            <div class="info-container">
+                <i class="fa-regular fa-location-dot"></i>
+                <div>
+                    <p class="info-label">Office location</p>
+                    <p class="info-text">Klarabergsviadukten 90, 111 52 Stockholm</p>
+                </div>
+            </div>
+            <div class="info-container">
+                <i class="fa-regular fa-phone"></i>
+                <div>
+                    <p class="info-label">Phone number</p>
+                    <p class="info-text">+46 8 123 456 75</p>
+                </div>
+            </div>
+            <div class="info-container">
+                <i class="fa-regular fa-envelope"></i>
+                <div>
+                    <p class="info-label">E-mail address</p>
+                    <p class="info-text">sales@onatrix.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

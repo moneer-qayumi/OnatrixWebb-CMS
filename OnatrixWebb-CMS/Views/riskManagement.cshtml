@@ -1,0 +1,90 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var riskManagementImage2 = Model?.Value<IPublishedContent>("riskManagementImage2")?.Url() ?? "default-image-url";
+    var riskManagementImage = Model?.Value<IPublishedContent>("riskManagementImage")?.Url() ?? "default-image-url";
+    var riskManagementImage3 = Model?.Value<IPublishedContent>("riskManagementImage3")?.Url() ?? "default-image-url";
+}
+
+
+<section class="page-top bg-gray">
+    <h1>Risk Management</h1>
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="/our-services">Services</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a class="active" href="#">Risk Management</a>
+    </div>
+</section>
+
+<!----article --->
+<section class="article">
+    <div class="container">
+        <aside class="sidebar">
+            <h5>About us</h5>
+            <img src="@riskManagementImage2" alt="People at table">
+            <p class="about-us-text">
+                Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            </p>
+            <form class="support-box bg-primary" method="get" novalidate>
+                <h5>How can we help you?</h5>
+                <p class="support-text">online support 24/7, we are here to help you</p>
+                <div class="input-container">
+                    <input type="email" id="email" name="email" placeholder="E-mail address">
+                    <button class="btn"><i class="fa-regular fa-envelope"></i></button>
+                </div>
+            </form>
+        </aside>
+        <div class="article-container">
+            <img src="@riskManagementImage" alt="People cheering">
+            <h4>key point</h4>
+            <ul>
+                <li>Financial planning is the process of helping clients meet their financial needs today and reach their dreams and goals tomorrow.</li>
+                <li>Pellentesque fringilla augue quis dolor dapibus semper eget non nibh. Ut lobortis, nulla sed euismod posuere, quam magna scelerisque lectus, auctor iaculis quam ligula nec augue</li>
+                <li>In hac habitasse platea dictumst. Aliquam felis ante, tincidunt sed magna auctor, aliquet dapibus turpis.</li>
+            </ul>
+            <h4>A financial plan is based on a personal relationship</h4>
+            <p>No matter where you find yourself today or see yourself in the future, a financial planning relationship with an Ameriprise financial advisor can help you find your financial balance and bring your dreams and goals more within reach.</p>
+            <p>Our Confident Retirement approach to financial planning begins with a one-on-one conversation. At its core is a personal relationship with an advisor dedicated to helping you reach the future you imagine, on your own terms, in a way that is convenient for you.</p>
+            <p>The financial planning process all starts with learning about you. Your advisor will take the time to:</p>
+            <ul>
+                <li>Listen closely to you and learn what you value</li>
+                <li>Analyze your current financial situation</li>
+                <li>Understand your feelings about managing money and investments</li>
+            </ul>
+            <p>Then your advisor will offer personalized advice and guidance to help you reach your financial goals. Ameriprise advisors have access to a broad array of solutions to help you plan for your confident future.</p>
+            <p>And once you have a plan in place, you may feel more confident knowing that your advisor will stay with you over time, helping you track your progress toward your goals and making adjustments along the way when your life or dreams change.</p>
+            <img class="img-margin" src="@riskManagementImage3" alt="Meeting">
+            <h4>We'll help you achieve financial confidence</h4>
+            <p>Working with a financial advisor may help you come away feeling more confident knowing that you have the support you need to help:</p>
+            <ul>
+                <li>Cover your essentials. Essentials are the monthly expenses that keep your life running.</li>
+                <li>Ensure your lifestyle. Lifestyle is about the things that you want to do, and how you want to live, today and in the future.</li>
+                <li>Prepare for the unexpected. The unexpected are events that could derail your financial plans.</li>
+                <li>Leave a legacy. Legacy is about the impact you'll make on the people, charities and causes that are important to you.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!----contact --->
+<section class="contact">
+    <div class="container">
+        <h4>Have a question?</h4>
+        <form method="get" novalidate>
+            <div class="grid">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="email" id="email" name="email" placeholder="Email">
+                <textarea id="question" name="question" placeholder="Question"></textarea>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!----contactinfo --->
+@await Html.PartialAsync("static/contactinfo")
+

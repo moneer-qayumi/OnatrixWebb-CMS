@@ -1,0 +1,147 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var aboutMainImage = Model?.Value<IPublishedContent>("aboutMainImage")?.Url() ?? "default-image-url";
+    var testimonialsImage = Model?.Value<IPublishedContent>("testimonialsImage")?.Url() ?? "default-image-url";
+    var teamMember1Image = Model?.Value<IPublishedContent>("teamMember1Image")?.Url() ?? "default-image-url";
+    var teamMember2Image = Model?.Value<IPublishedContent>("teamMember2Image")?.Url() ?? "default-image-url";
+    var teamMember3Image = Model?.Value<IPublishedContent>("teamMember3Image")?.Url() ?? "default-image-url";
+    var teamMember4Image = Model?.Value<IPublishedContent>("teamMember4Image")?.Url() ?? "default-image-url";
+    var teamMember5Image = Model?.Value<IPublishedContent>("teamMember5Image")?.Url() ?? "default-image-url";
+    var teamMember6Image = Model?.Value<IPublishedContent>("teamMember6Image")?.Url() ?? "default-image-url";
+    var teamMember7Image = Model?.Value<IPublishedContent>("teamMember7Image")?.Url() ?? "default-image-url";
+}
+
+
+
+<section class="page-top bg-gray">
+    <h1>About Us</h1>
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a class="active" href="#">About</a>
+    </div>
+</section>
+
+<!----ceo section --->
+<section class="ceo-statement">
+    <div class="container">
+        <div class="ceo-img">
+            <img src="@aboutMainImage" alt="Tina Fox, CEO">
+            <p>Tina Fox - CEO & Founder at Onatrix</p>
+        </div>
+        <div class="ceo-statement-content">
+            <p class="quote">@Model.Value("aboutMainQuote")</p>
+            <p class="ceo-statement-paragraph leading">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae metus a massa lobortis sollicitudin. Cras ut nulla quam. Maecenas tempus felis quis lorem malesuada vehicular.
+            </p>
+            <p class="ceo-statement-paragraph">
+                Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum.
+            </p>
+            <p class="ceo-statement-paragraph">
+                Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.
+            </p>
+            <p class="ceo-statement-paragraph">
+                Phasellus laoreet, sapien id euismod hendrerit, nibh ligula hendrerit libero, sit amet hendrerit elit turpis nec velit. Praesent tincidunt nisi at vulputate ornare. Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum elit at urna dapibus viverra. Etiam lectus libero, condimentum eget justo ac, accumsan suscipit libero.
+            </p>
+            <p class="ceo-statement-paragraph">
+                Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum  i commodo, eros quis consequat consequat.
+            </p>
+            <p class="ceo-statement-paragraph">
+                Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.
+            </p>
+            <p class="ceo-statement-paragraph">
+                Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!----reviews section --->
+<section class="reviews bg-gray">
+     <div class="container">
+        <div class="review-content">
+            <h6>GREAT REVIEWS FOR OUR SERVICES</h6>
+            <h2>Trusted by some Biggest Names</h2>
+            <p class="review-text">
+                Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals.
+            </p>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+                <p class="customer">Kevin Gardner</p>
+                <p class="company">Swebank</p>
+        </div>
+        <div class="review-img">
+            <img src="@testimonialsImage" alt="Kevin Gardner">
+        </div>
+    </div>
+</section>
+
+<!----team section --->
+<section class="team">
+    <div class="container">
+        <h6>OUR EXPERT</h6>
+        <h2>A team of professionals with years of experience</h2>
+        <div class="grid">
+            <div class="grid-container">
+                <img src="@teamMember1Image" alt="Brandon Newton">
+                <div class="member-info">
+                    <h5>Brandon Newton</h5>
+                    <p>Financial Advisor at Onatrix</p>
+                </div>
+            </div>
+            <div class="grid-container">
+                <img src="@teamMember2Image" alt="Brandon Newton">
+                <div class="member-info">
+                    <h5>Brandon Newton</h5>
+                    <p>Financial Advisor at Onatrix</p>
+                </div>
+            </div>
+            <div class="grid-container">
+                <img src="@teamMember3Image" alt="Brandon Newton">
+                <div class="member-info">
+                    <h5>Brandon Newton</h5>
+                    <p>Financial Advisor at Onatrix</p>
+                </div>
+            </div>
+            <div class="grid-container">
+                <img src="@teamMember4Image" alt="Brandon Newton">
+                <div class="member-info">
+                    <h5>Brandon Newton</h5>
+                    <p>Financial Advisor at Onatrix</p>
+                </div>
+            </div>
+            <div class="grid-container">
+                <img src="@teamMember5Image" alt="Brandon Newton">
+                <div class="member-info">
+                    <h5>Brandon Newton</h5>
+                    <p>Financial Advisor at Onatrix</p>
+                </div>
+            </div>
+            <div class="grid-container">
+                <img src="@teamMember6Image" alt="Brandon Newton">
+                <div class="member-info">
+                    <h5>Brandon Newton</h5>
+                    <p>Financial Advisor at Onatrix</p>
+                </div>
+            </div>
+            <div class="grid-container">
+                <img src="@teamMember7Image" alt="Brandon Newton">
+                <div class="member-info">
+                    <h5>Brandon Newton</h5>
+                    <p>Financial Advisor at Onatrix</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!----contactinfo --->
+@await Html.PartialAsync("static/contactinfo")

@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+}
+
+
+
+<section class="page-top bg-gray">
+    <h1>Our Services</h1>
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a class="active" href="#">Services</a>
+    </div>
+</section>
+
+<!----our-services--->			
+@await Html.PartialAsync("Static/services")
+
+<div class="pagination">
+    <button class="btn prev-next none">Prev</button>
+    <button class="btn number active">1</button>
+    <button class="btn number">2</button>
+    <button class="btn prev-next">Next</button>
+</div>
+
+<!----contact-info---->
+@await Html.PartialAsync("static/contactinfo")

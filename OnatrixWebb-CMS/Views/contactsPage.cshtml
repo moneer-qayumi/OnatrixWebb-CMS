@@ -1,0 +1,54 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    var contactsImagemap = Model?.Value<IPublishedContent>("contactsImagemap")?.Url() ?? "default-image-url";
+}
+
+
+<!-------baner-------->
+<section class="page-top bg-gray">
+    <h1>Contact Us</h1>
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a class="active" href="#">Contact</a>
+    </div>
+</section>
+
+
+
+
+
+<!-------partial-contactinfo-------->
+
+@await Html.PartialAsync("static/contactinfo")
+
+<section class="map">
+    <div class="img-container">
+        <img src="@contactsImagemap" alt="Map">
+        <div class="overlay"></div>
+    </div>
+</section>
+<section class="contact-form">
+    <div class="container bg-light">
+        <h6>REQUEST A CALL BACK</h6>
+        <h2>Let us know about your next project</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur, ligula semper sagittis lobortis, eros metus efficitur purus</p>
+        <form method="get" novalidate>
+            <div class="grid">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="email" id="email" name="email" placeholder="Email address">
+                <input type="text" id="phone" name="phone" placeholder="Phone">
+                <select name="service" id="service">
+                    <option value="1">Financial consulting</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!-------partners-------->
+@await Html.PartialAsync("static/partners")
